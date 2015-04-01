@@ -14,7 +14,10 @@ I found the ease and rhythm of writing code in Python railroaded by C++.
 Perhaps Go could replace C++ for this purpose so I decided to attempt a speed test using a task I would routinely leave Python for in favour of C++, [Markov Chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) (MCMC).
 Useful in Bayesian Inference, MCMC attempts to intelligently walk through parameter space to build probability distributions of the solution.
 MCMC accomplishes this by creating a numerical chain of accepted randomly drawn numbers, each link dependent on the previous step.
-The image below shows a 5000 element trace of this problem, top right is data with fitted line and bottom are the probability distributions for the parameters.
+
+The image below shows a 5000 element trace of this problem.
+The top left pane shows the parameter walk through the steps and the top right pane is data with fitted line.
+The two bottom panes show the probability distributions for the parameters with the 95% credible interval on either side of the median value.
 
 ![Sample 5000 element trace](mcmc_sample.png)
 

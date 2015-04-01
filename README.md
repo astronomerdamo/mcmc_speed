@@ -30,7 +30,7 @@ Results
 -------
 
 | Language | Version | Total Iterations | Acceptance Ratio | Total CPU time (s) | Time/Iteration (ms) |
-|---|---|---|---|---|---|
+|:---|---:|---:|---:|---:|---:|
 | Go | 1.4.2 | 1911726 | 26.2% | 2.3 | 1.2 |
 | C++ | GCC 4.9.2 | 1841681 | 27.2% | 2.4 | 1.3 |
 | Python | 2.7.9 | 1916753 | 26.1% | 480.6 | 250.7 |

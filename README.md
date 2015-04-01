@@ -19,7 +19,7 @@ MCMC accomplishes this by creating a numerical chain of accepted randomly drawn 
 
 I wrote a very simple MCMC program in Go, C++ and Python making sure to construct each in a similar fashion while taking advantage of any language specific features that might make my life easier.
 I'm using mostly standard libraries (I consider numpy standard when working with any type of numerical data in Python).
-Each program attempts to fit a line (y = ax + b) to a data set (x, y, dy) by creating a 500000 element trace for each parameter (a,b).
+Each program attempts to fit a line (y = ax + b) to a data set (x, y, dy) by creating a 500000 element trace for each parameter (a, b).
 I've massaged the data and starting distributions enough to get a ~25% acceptance ratio which means each program will need to do ~2 million iterations.
 
 Let's address the elephant in the room, yes I am comparing the execution speeds of programs that aren't doing _exactly_ the same number of iterations.
@@ -36,6 +36,6 @@ Results
 | Python | 2.7.9 | 1916753 | 26.1% | 480.6 | 250.7 |
 
 Not only is Go as fast as C++ but it's quite nice to code in.
-It feels like a nice mix of Python and C++ and I was able to get up and going very quickly.
-This is an encouraging result and I'm looking forward to learning more about Go.
+Go has the readability and ease of python without the overhead of C++.
+It's also worth noting that I compiled the C++ code with the '-O2' optimizer flag which cut the run time in half.
 If you're at all interested check out the [official go lang book](http://www.golang-book.com).

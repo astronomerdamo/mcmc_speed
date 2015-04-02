@@ -41,9 +41,11 @@ Results
 | Python | 3.4.3 | 1914044 | 26.1% | 26.9 | 14.1 |
 | Python | 2.7.9 | 1907274 | 26.2% | 27.7 | 14.5 |
 
-Not only is Go as fast as C++ but it's quite nice to code in.
+Not only is Go as fast as C++ but it's quite nice to code with.
 Go has the readability and ease of python without the overhead of C++.
+The real surprise is PyPy which executed the Python code (without any modification) to within a factor of two to the C++/Go code.
 It's also worth noting that I compiled the C++ code with the '-O2' optimizer flag which cut the run time in half.
 If you're at all interested check out the [official go lang book](http://www.golang-book.com).
 
-__Thank you__ to [Andrew Valencik](https://github.com/valencik) for exposing my over reliance on the numpy library in Python, even if he was kind of a dick about it. He managed to get a factor of 20 speed up from the Python mcmc implementation by using vanilla Python arrays over numpy.
+__Thank you__ to [Andrew Valencik](https://github.com/valencik) for exposing my over reliance on the numpy library in Python and investigating PyPy.
+Andrew managed to get a factor of 20 speed up from the Python mcmc implementation by using vanilla Python arrays over numpy, and a further factor of 5 speed up using PyPy.

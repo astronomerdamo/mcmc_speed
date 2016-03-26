@@ -38,8 +38,7 @@ Results
 | Go | 1.4.2 | 1911726 | 26.2% | 2.3 | 1.2 |
 | C++ | GCC 4.9.2 | 1841681 | 27.2% | 2.4 | 1.3 |
 | PyPy | 2.5.1 | 1912917 | 26.1% | 3.9 | 2.0 |
-| Python | 3.4.3 | 1914044 | 26.1% | 26.9 | 14.1 |
-| Python | 2.7.9 | 1907274 | 26.2% | 27.7 | 14.5 |
+| Python | 3.5.1 | 1909984 | 26.5% | 26.5 | 13.9 |
 
 Not only is Go as fast as C++ but it's quite nice to code with.
 Go has the readability and ease of python without the overhead of C++.

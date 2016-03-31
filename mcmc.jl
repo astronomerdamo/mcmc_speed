@@ -64,6 +64,11 @@ function mcmc(a0, sa, b0, sb, x, y, dy)
         end
         j += 1
     end
+
+    @printf "i: %d, j: %d\n" i j
+    @printf "Acceptance ratio: %f\n" i/j
+    @printf "a: %f\n" sum(atrace[brn:end]) / length(atrace[brn:end])
+    @printf "b: %f\n" sum(btrace[brn:end]) / length(btrace[brn:end])
 end
 
 #=
@@ -71,19 +76,19 @@ end
 =#
 
 x = Float64[203, 58, 210, 202,
-            198, 158, 165, 201,
-            157, 131, 166, 160,
-            186, 125, 218, 146]
+	    198, 158, 165, 201,
+	    157, 131, 166, 160,
+	    186, 125, 218, 146]
 
 y = Float64[495, 173, 479, 504,
-            510, 416, 393, 442,
-            317, 311, 400, 337,
-            423, 334, 533, 344]
+	    510, 416, 393, 442,
+	    317, 311, 400, 337,
+	    423, 334, 533, 344]
 
 dy = Float64[21, 15, 27, 14,
-             30, 16, 14, 25,
-             52, 16, 34, 31,
-             42, 26, 16, 22]
+	     30, 16, 14, 25,
+	     52, 16, 34, 31,
+	     42, 26, 16, 22]
 
 a0 = 2.5
 sa = 0.025
@@ -91,5 +96,5 @@ b0 = 28.82
 sb = 2.5
 
 # timing start
-mcmc(a0, sa, b0, sb, x, y, dy)
+@time mcmc(a0, sa, b0, sb, x, y, dy)
 # timing end

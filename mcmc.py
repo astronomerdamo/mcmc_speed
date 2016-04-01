@@ -7,8 +7,9 @@
 '''
 
 from __future__ import print_function
-from numpy import random, exp
+import math
 import time
+import random
 
 '''
     Basic linear equation function
@@ -46,13 +47,13 @@ def mcmc(a0, sa, b0, sb, x, y, dy):
     brn = 1000
 
     while i < mcn:
-        at = random.normal(a0, sa)
-        bt = random.normal(b0, sb)
+        at = random.normalvariate(a0, sa)
+        bt = random.normalvariate(b0, sb)
         yt = lnfnc(x, at, bt)
         chit = chisqr(yt, y, dy)
-        acal = exp((chi0 - chit) / 2.0)
+        acal = math.exp((chi0 - chit) / 2.0)
         aexp = min(1.0, acal)
-        u = random.rand()
+        u = random.random()
 
         if u <= aexp:
             a0 = at
@@ -65,9 +66,7 @@ def mcmc(a0, sa, b0, sb, x, y, dy):
 
         j += 1
 
-    print("i: ", i, ", j: ", j)
-    print("Acceptance ratio:", i/float(j))
-    print("a: ", sum(atrace[brn:]) / len(atrace[brn:]), " b: ", sum(btrace[brn:]) / len(btrace[brn:]))
+    return i, j, sum(atrace[brn:]) / len(atrace[brn:]), sum(btrace[brn:]) / len(btrace[brn:])
 
 #
 # MAIN
@@ -94,5 +93,6 @@ b0 = 28.82
 sb = 2.5
 
 cpubeg = time.time()
-mcmc(a0, sa, b0, sb, x, y, dy)
+mcmc_out = mcmc(a0, sa, b0, sb, x, y, dy)
 print("CPU time: ", time.time() - cpubeg)
+print(mcmc_out)

@@ -64,11 +64,7 @@ function mcmc(a0, sa, b0, sb, x, y, dy)
         end
         j += 1
     end
-
-    @printf "i: %d, j: %d\n" i j
-    @printf "Acceptance ratio: %f\n" i/j
-    @printf "a: %f\n" sum(atrace[brn:end]) / length(atrace[brn:end])
-    @printf "b: %f\n" sum(btrace[brn:end]) / length(btrace[brn:end])
+    return i, j, sum(atrace[brn:end]) / length(atrace[brn:end]), sum(btrace[brn:end]) / length(btrace[brn:end])
 end
 
 #=
@@ -96,5 +92,6 @@ b0 = 28.82
 sb = 2.5
 
 # timing start
-@time mcmc(a0, sa, b0, sb, x, y, dy)
+@time mcmc_out = mcmc(a0, sa, b0, sb, x, y, dy)
 # timing end
+println(mcmc_out)

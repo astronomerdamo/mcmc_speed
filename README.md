@@ -7,7 +7,7 @@ Introduction
 This repo started as a speed comparision between Python, C++ and Go doing a simple MCMC linear regression.
 It's turned into something of a rosetta stone for myself when learning new languages doing numerical computation.
 
-Useful in Bayesian Inference, MCMC attempts to intelligently walk through parameter space to build probability distributions of the solution.
+Useful in Bayesian Inference, MCMC attempts to walk through parameter space to build probability distributions of the solution.
 MCMC accomplishes this by creating a numerical chain of accepted randomly drawn numbers, each link dependent on the previous step.
 
 The image below shows a 5000 element trace of this problem.
@@ -23,7 +23,8 @@ I've massaged the data and starting distributions enough to get a ~25% acceptanc
 
 Yes I am comparing the execution speeds of programs that aren't doing the same number of iterations.
 They are however, preforming the same task which I, and possibly others, would find more useful than simply calculating a Fibonacci sequence or saying hello.
-Not scientifically accurate, just anecdotally interesting.
+
+__Not scientifically accurate, just anecdotally interesting.__
 
 Results
 -------
